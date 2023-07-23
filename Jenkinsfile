@@ -2,7 +2,7 @@ pipeline {
     agent { label 'JDK-17'}
 
     triggers {
-        poolSCM('* * * * *')
+        pollSCM('* * * * *')
     }
 
     tools {
