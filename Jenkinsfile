@@ -14,8 +14,7 @@ pipeline {
               git url: 'https://github.com/Praneethysp007/jenkins.git',
                   branch: 'main'
            }
-        }
-    }    
+        }    
         stage('Build and package') {
            steps {
               sh script: 'mvn package'
@@ -27,5 +26,6 @@ pipeline {
                archiveArtifacts artifacts: '**/target/*.jar'
                junit testResults: '**/target/surefire-reports/*.xml'
             }
-        }   
+        }  
+    }
 }
